@@ -63,6 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Data Time Series';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UTS PSD CLUSTER" href="UTS-CLUSTER.html" />
+    <link rel="prev" title="Crawling Data Twitter" href="Crawling%20Twitter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -153,10 +155,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Crawling%20Detik.html">Crawling Data Detik</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling%20PTA.html">Crawling Data PTA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling%20Twitter.html">Crawling Data Twitter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Time Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS-CLUSTER.html">UTS PSD CLUSTER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS-PSD.html">UTS PSD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas_Graph_PSD.html">Tugas Pagerank dan Implementasi Github</a></li>
@@ -654,7 +657,7 @@ Month
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-73cb5007-e963-4bc8-bc3b-b3f881c68c19">
+  <div id="df-03a348cc-ca07-4123-a2ff-1c24b3322e65">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -750,7 +753,7 @@ Month
 </table>
 <p>142 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-73cb5007-e963-4bc8-bc3b-b3f881c68c19')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-03a348cc-ca07-4123-a2ff-1c24b3322e65')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -801,12 +804,12 @@ Month
 
       <script>
         const buttonEl =
-          document.querySelector('#df-73cb5007-e963-4bc8-bc3b-b3f881c68c19 button.colab-df-convert');
+          document.querySelector('#df-03a348cc-ca07-4123-a2ff-1c24b3322e65 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-73cb5007-e963-4bc8-bc3b-b3f881c68c19');
+          const element = document.querySelector('#df-03a348cc-ca07-4123-a2ff-1c24b3322e65');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -840,21 +843,6 @@ Month
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai xt terbesar:  622
 Nilai xt terkecil:  104
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataY</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;xt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">dataYmin</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dataY</span><span class="p">)</span>
-<span class="n">dataYmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dataY</span><span class="p">)</span>
-<span class="n">dataYmin</span><span class="p">,</span> <span class="n">dataYmax</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(104, 622)
 </pre></div>
 </div>
 </div>
@@ -929,7 +917,7 @@ Nilai xt terkecil:  104
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-31585865-691f-48f7-bbfd-5d7657c46be3">
+  <div id="df-0d6a8c04-2500-46be-93ff-1c6ddfeb44a6">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -956,34 +944,34 @@ Nilai xt terkecil:  104
   </thead>
   <tbody>
     <tr>
-      <th>140</th>
-      <td>0.779923</td>
-      <td>0.689189</td>
-      <td>0.552124</td>
+      <th>99</th>
+      <td>0.471042</td>
+      <td>0.484556</td>
+      <td>0.613900</td>
     </tr>
     <tr>
-      <th>56</th>
-      <td>0.256757</td>
-      <td>0.206564</td>
-      <td>0.146718</td>
+      <th>136</th>
+      <td>0.710425</td>
+      <td>0.832046</td>
+      <td>1.000000</td>
     </tr>
     <tr>
-      <th>37</th>
-      <td>0.146718</td>
-      <td>0.171815</td>
-      <td>0.148649</td>
+      <th>122</th>
+      <td>0.583012</td>
+      <td>0.563707</td>
+      <td>0.610039</td>
     </tr>
     <tr>
-      <th>104</th>
-      <td>0.579151</td>
-      <td>0.469112</td>
-      <td>0.388031</td>
+      <th>7</th>
+      <td>0.084942</td>
+      <td>0.061776</td>
+      <td>0.028958</td>
     </tr>
     <tr>
-      <th>26</th>
+      <th>25</th>
+      <td>0.088803</td>
       <td>0.142857</td>
       <td>0.113900</td>
-      <td>0.131274</td>
     </tr>
     <tr>
       <th>...</th>
@@ -992,40 +980,40 @@ Nilai xt terkecil:  104
       <td>...</td>
     </tr>
     <tr>
-      <th>117</th>
-      <td>0.492278</td>
-      <td>0.397683</td>
-      <td>0.449807</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>0.040541</td>
-      <td>0.086873</td>
+      <th>18</th>
       <td>0.127413</td>
+      <td>0.127413</td>
+      <td>0.104247</td>
     </tr>
     <tr>
-      <th>69</th>
-      <td>0.241313</td>
-      <td>0.191120</td>
-      <td>0.241313</td>
+      <th>46</th>
+      <td>0.131274</td>
+      <td>0.173745</td>
+      <td>0.177606</td>
     </tr>
     <tr>
-      <th>85</th>
-      <td>0.333977</td>
-      <td>0.411197</td>
-      <td>0.403475</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>0.015444</td>
+      <th>1</th>
       <td>0.027027</td>
       <td>0.054054</td>
+      <td>0.048263</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>0.779923</td>
+      <td>0.689189</td>
+      <td>0.552124</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>0.484556</td>
+      <td>0.613900</td>
+      <td>0.696911</td>
     </tr>
   </tbody>
 </table>
 <p>113 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-31585865-691f-48f7-bbfd-5d7657c46be3')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-0d6a8c04-2500-46be-93ff-1c6ddfeb44a6')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1076,12 +1064,12 @@ Nilai xt terkecil:  104
 
       <script>
         const buttonEl =
-          document.querySelector('#df-31585865-691f-48f7-bbfd-5d7657c46be3 button.colab-df-convert');
+          document.querySelector('#df-0d6a8c04-2500-46be-93ff-1c6ddfeb44a6 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-31585865-691f-48f7-bbfd-5d7657c46be3');
+          const element = document.querySelector('#df-0d6a8c04-2500-46be-93ff-1c6ddfeb44a6');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1107,7 +1095,7 @@ Nilai xt terkecil:  104
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-20035ffd-0da0-43c6-bcb4-c886190392d2">
+  <div id="df-2c1e23aa-34d1-47de-b6da-d80e8600fb5b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1134,112 +1122,70 @@ Nilai xt terkecil:  104
   </thead>
   <tbody>
     <tr>
-      <th>39</th>
-      <td>0.148649</td>
-      <td>0.152510</td>
-      <td>0.220077</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>0.173745</td>
-      <td>0.177606</td>
-      <td>0.177606</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>0.380309</td>
-      <td>0.486486</td>
-      <td>0.471042</td>
-    </tr>
-    <tr>
-      <th>131</th>
-      <td>0.581081</td>
-      <td>0.604247</td>
-      <td>0.554054</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>0.241313</td>
-      <td>0.266409</td>
-      <td>0.249035</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>0.364865</td>
-      <td>0.299228</td>
-      <td>0.241313</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>0.129344</td>
-      <td>0.146718</td>
-      <td>0.171815</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>0.152510</td>
-      <td>0.220077</td>
-      <td>0.243243</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>0.389961</td>
-      <td>0.407336</td>
-      <td>0.380309</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>0.183398</td>
-      <td>0.183398</td>
-      <td>0.154440</td>
-    </tr>
-    <tr>
-      <th>73</th>
-      <td>0.249035</td>
-      <td>0.314672</td>
-      <td>0.318533</td>
-    </tr>
-    <tr>
-      <th>114</th>
-      <td>0.747104</td>
-      <td>0.774131</td>
-      <td>0.579151</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>0.206564</td>
-      <td>0.146718</td>
-      <td>0.187259</td>
-    </tr>
-    <tr>
-      <th>87</th>
-      <td>0.403475</td>
-      <td>0.413127</td>
-      <td>0.521236</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>0.088803</td>
-      <td>0.142857</td>
-      <td>0.113900</td>
-    </tr>
-    <tr>
-      <th>112</th>
-      <td>0.500000</td>
-      <td>0.638996</td>
-      <td>0.747104</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0.071429</td>
-      <td>0.059846</td>
-      <td>0.040541</td>
-    </tr>
-    <tr>
-      <th>107</th>
+      <th>106</th>
+      <td>0.388031</td>
       <td>0.447876</td>
       <td>0.455598</td>
-      <td>0.413127</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>0.268340</td>
+      <td>0.308880</td>
+      <td>0.324324</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0.015444</td>
+      <td>0.027027</td>
+      <td>0.054054</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>0.314672</td>
+      <td>0.318533</td>
+      <td>0.320463</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>0.333977</td>
+      <td>0.411197</td>
+      <td>0.403475</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.069498</td>
+      <td>0.079151</td>
+      <td>0.088803</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>0.397683</td>
+      <td>0.449807</td>
+      <td>0.494208</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>0.328185</td>
+      <td>0.256757</td>
+      <td>0.335907</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>0.486486</td>
+      <td>0.471042</td>
+      <td>0.484556</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>0.401544</td>
+      <td>0.328185</td>
+      <td>0.256757</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>0.498069</td>
+      <td>0.581081</td>
+      <td>0.604247</td>
     </tr>
     <tr>
       <th>48</th>
@@ -1248,69 +1194,111 @@ Nilai xt terkecil:  104
       <td>0.254826</td>
     </tr>
     <tr>
-      <th>63</th>
+      <th>17</th>
+      <td>0.086873</td>
+      <td>0.127413</td>
+      <td>0.127413</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>0.380309</td>
+      <td>0.486486</td>
+      <td>0.471042</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0.113900</td>
+      <td>0.131274</td>
+      <td>0.142857</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>0.162162</td>
+      <td>0.252896</td>
       <td>0.237452</td>
-      <td>0.250965</td>
-      <td>0.308880</td>
     </tr>
     <tr>
-      <th>12</th>
-      <td>0.021236</td>
-      <td>0.042471</td>
-      <td>0.071429</td>
+      <th>32</th>
+      <td>0.154440</td>
+      <td>0.111969</td>
+      <td>0.081081</td>
     </tr>
     <tr>
-      <th>133</th>
-      <td>0.554054</td>
-      <td>0.608108</td>
-      <td>0.689189</td>
+      <th>51</th>
+      <td>0.252896</td>
+      <td>0.241313</td>
+      <td>0.268340</td>
     </tr>
     <tr>
-      <th>116</th>
-      <td>0.579151</td>
-      <td>0.492278</td>
-      <td>0.397683</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>0.220077</td>
-      <td>0.243243</td>
-      <td>0.266409</td>
-    </tr>
-    <tr>
-      <th>123</th>
-      <td>0.563707</td>
-      <td>0.610039</td>
-      <td>0.710425</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>0.347490</td>
-      <td>0.333977</td>
-      <td>0.411197</td>
-    </tr>
-    <tr>
-      <th>35</th>
+      <th>34</th>
+      <td>0.081081</td>
       <td>0.119691</td>
       <td>0.129344</td>
-      <td>0.146718</td>
     </tr>
     <tr>
-      <th>22</th>
-      <td>0.019305</td>
-      <td>0.069498</td>
-      <td>0.079151</td>
+      <th>6</th>
+      <td>0.084942</td>
+      <td>0.084942</td>
+      <td>0.061776</td>
     </tr>
     <tr>
-      <th>109</th>
-      <td>0.413127</td>
-      <td>0.498069</td>
-      <td>0.471042</td>
+      <th>11</th>
+      <td>0.027027</td>
+      <td>0.021236</td>
+      <td>0.042471</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>0.492278</td>
+      <td>0.397683</td>
+      <td>0.449807</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>0.469112</td>
+      <td>0.388031</td>
+      <td>0.447876</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.054054</td>
+      <td>0.048263</td>
+      <td>0.032819</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>0.710425</td>
+      <td>0.857143</td>
+      <td>0.878378</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>0.500000</td>
+      <td>0.638996</td>
+      <td>0.747104</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>0.696911</td>
+      <td>0.700772</td>
+      <td>0.579151</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>0.521236</td>
+      <td>0.596525</td>
+      <td>0.581081</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>0.266409</td>
+      <td>0.249035</td>
+      <td>0.314672</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-20035ffd-0da0-43c6-bcb4-c886190392d2')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2c1e23aa-34d1-47de-b6da-d80e8600fb5b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1361,12 +1349,12 @@ Nilai xt terkecil:  104
 
       <script>
         const buttonEl =
-          document.querySelector('#df-20035ffd-0da0-43c6-bcb4-c886190392d2 button.colab-df-convert');
+          document.querySelector('#df-2c1e23aa-34d1-47de-b6da-d80e8600fb5b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-20035ffd-0da0-43c6-bcb4-c886190392d2');
+          const element = document.querySelector('#df-2c1e23aa-34d1-47de-b6da-d80e8600fb5b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1419,7 +1407,7 @@ Jumlah data testing: 29
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai error: 0.0037113636135958188
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai error: 0.0023390013297016074
 </pre></div>
 </div>
 </div>
@@ -1436,7 +1424,7 @@ Jumlah data testing: 29
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE: 0.06092096202126013
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE: 0.04836322290440958
 </pre></div>
 </div>
 </div>
@@ -1464,7 +1452,7 @@ Jumlah data testing: 29
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE: 0.07497113429945344
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE: 0.06466968950610524
 </pre></div>
 </div>
 </div>
@@ -1502,6 +1490,24 @@ Jumlah data testing: 29
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Crawling%20Twitter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crawling Data Twitter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="UTS-CLUSTER.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">UTS PSD CLUSTER</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
