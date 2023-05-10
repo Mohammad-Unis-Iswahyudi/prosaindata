@@ -156,17 +156,15 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling%20Detik.html">Crawling Data Detik</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Data PTA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling%20Twitter.html">Crawling Data Twitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Time%20Series.html">Data Time Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS-CLUSTER.html">UTS PSD CLUSTER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS-PSD.html">UTS PSD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas_Graph_PSD.html">Tugas Pagerank dan Implementasi Github</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Topic%20Modelling.html"><strong>Topic Modelling</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Topic%20Modelling.html">Topic Modelling</a></li>
 </ul>
 
     </div>
@@ -403,10 +401,10 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting request2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading request2-0.2.tar.gz (3.2 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting request2
+  Downloading request2-0.2.tar.gz (3.2 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
@@ -419,7 +417,7 @@ Building wheels for collected packages: request2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for request2 (setup.py) ... ?25l?25hdone
-  Created wheel for request2: filename=request2-0.2-py3-none-any.whl size=1967 sha256=82ed56eaeedcacb23d9bd7375e6133fd743a01702acf973c4123491de16ed200
+  Created wheel for request2: filename=request2-0.2-py3-none-any.whl size=1967 sha256=1517187ca2a0e6174328c5d2a7040fc5db4c79b012a6f0e6ea69cc945b1d5cbd
   Stored in directory: /root/.cache/pip/wheels/fe/98/97/4137972b6f31d7285ace92f76c2d546666cc9f51bbdf9b9575
 Successfully built request2
 </pre></div>
@@ -469,12 +467,10 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting snscrape
+Collecting snscrape
   Downloading snscrape-0.6.2.20230320-py3-none-any.whl (71 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/71.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">71.8/71.8 kB</span> <span class=" -Color -Color-Red">3.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">71.8/71.8 kB</span> <span class=" -Color -Color-Red">4.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hRequirement already satisfied: requests[socks] in /usr/local/lib/python3.10/dist-packages (from snscrape) (2.27.1)
 Requirement already satisfied: lxml in /usr/local/lib/python3.10/dist-packages (from snscrape) (4.9.2)
 Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.10/dist-packages (from snscrape) (4.11.2)
@@ -753,6 +749,37 @@ Kata Kunci: Tulisan Tangan, Modified Direction Feature, Learning Vector Quantiza
 https://pta.trunojoyo.ac.id/welcome/detail/070411100152
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Penulis : SITI KHOLILAH
+PENGENALAN POLA SENYUMAN BERBASIS EKSTRAKSI FITUR PRINCIPAL COMPONENT ANALYSIS (PCA) DAN LINIER DESCRIMINANT ANALYSIS (LDA)
+Citra senyum merupakan salah satu fitur biometrik yang dapat dijadikan sebagai bukti autentik dari seseorang. Sistem pengenalan pola (pattern recognition) secara komputerisasi, akan mengetahui identitas atau ciri diri seseorang. Pengenalan senyum telah banyak diteliti oleh banyak kalangan. Salah satu bentuk penerapan pengenalan pola senyum ini adalah mengetahui senyum seseorang sehingga nantinya senyum tersebut dapat dikenali oleh komputer dan disimpan dalam database. Terdapat dua cara untuk menentukan pola senyuman yaitu secara manual dan otomatis. Secara manual dapat dilakukan dengan kasat mata, sedangkan secara otomatis dapat di tentukan dengan menggunakan suatu sistem. Pada  Tugas Akhir ini, mengidentifikasi senyuman secara otomatis digunakan metode Principal Component Analysis (PCA) dan Linier Descriminant Analysis (LDA), dimana jenis senyuman pada tugas akhir ini dibagi menjadi lima bagian, yaitu senyum manis, senyum mengejek, senyum yang dipaksakan, senyum tertutup dan senyum terbuka. Penggunaan metode ekstraksi fitur  yang tepat dan efisien  sangat menentukan keberhasilan dari sistem pengenalan pola secara keseluruhan. Untuk metode klasifikasi pengenalan pola menggunakan Euclidean Distance atau Manhattan Distance. Dari hasil uji coba menggunakan 175 gambar data pelatihan didapatkan tingkat akurasi PCA adalah 89.8% pada ordered3. Sedangkan hasil uji coba menggunakan PCA &amp; LDA didapatkan tingkat akurasi 100% pada ordered3.
+https://pta.trunojoyo.ac.id/welcome/detail/070411100114
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Penulis : Nansy Lovitasari
+SISTEM PEROLEHAN CITRA BERBASIS ISI MENGGUNAKAN
+GRAY LEVEL DIFFERENCE METHOD BERDASARKAN
+CIRI TEKSTUR PADA POLA BATIK
+
+Batik adalah kerajinan yang memiliki nilai seni tinggi dan telah menjadi bagian dari budaya Indonesia sejak lama. Batik di Indonesia mempunyai beragam jenis tekstur batik, warna batik, dan pola batik yang mencerminkan asal usul daerah dari batik tersebut. Saat ini pencarian citra berbasis teks sudah tidak efektif lagi karena adanya penilaian subjektif dari pengguna dalam merepresentasikan suatu citra. Karena itu diperlukan suatu sistem yang dapat menangani pencarian citra menggunakan query berupa citra atau disebut Sistem Perolehan Citra berbasis Isi (SPCI) atau Content Based Image Retrieval (CBIR). Penelitian  ini menggunakan ciri tekstur sebagai proses pencarian kemiripan dari delapan kelas citra batik yang  berbeda yaitu: Cirebon, Bali, Bangkalan, Pamekasan, Sumenep, Yogyakarta, Solo, dan Pekalongan sebagai objek perolehan citra berbasis isi. Sistem dibangun dengan proses utamanya yaitu ekstraksi fitur tekstur dengan menggunakan metode Gray Level Difference Method (GLDM) menggunakan empat arah utama. GLDM menghitung perbedaan mutlak antara sepasang derajat keabuan yang terpisah oleh jarak dan arah tertentu. Hasil ekstraksi fitur dilakukan pengukuran jarak kemiripan menggunakan metode Euclidean Distance. Dari uji coba aplikasi menggunakan pengukuran kemiripan Euclidean Distance dengan nilai threshold=7 diperoleh akurasi presisi sebesar  61%  pada data pelatihan 168 dan data uji coba 32 dengan 10 citra yang ditampilkan. 
+https://pta.trunojoyo.ac.id/welcome/detail/070411100036
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Penulis : Daniyar Bagus Prasetya
+ONTOLOGY SEMANTIC WEB UNTUK PENCARIAN TUGAS AKHIR PADA SISTEM INFORMASI TUGAS AKHIR(SIMTAK)
+Kebutuhan pencarian data pada internet yang cepat dan tepat saat ini menjadi faktor penting para pengguna layanan internet. Sistem Informasi Tugas Akhir (SIMTAK) yang digunakan di Fakultas Teknik Universitas Trunojoyo Madura juga membutuhkan pencarian data yang tepat dan cepat berdasarkan konteks. Sistem pencarian yang dipakai saat ini adalah pencarian database dimana masih belum mampu memberikan hasil pencarian yang sesuai dengan konteks atau keywords yang diinputkan. Untuk memiliki kebenaran dalam sistem kecerdasan, pengetahuan perlu ditangkap, diproses, digunakan kembali, dan disampaikan. Ontologi mendukung semua tugas ini. Ontologi adalah spesifikasi dari konseptualisasi. Semantik web adalah sebuah abstrak representasi pada World Wide Web (WWW) yang berbasiskan pada sebuah standar yang didefinisikan menggunakan Resource Description Framework (RDF) dan Ontology Web Language (OWL) ide dasarnya adalah untuk membawa web memiliki definisi dan link data sehingga dapat digunakan lebih efektif untuk mencari, otomasi, integrasi dan reuse informasi pada berbagai aplikasi. Semantik web didefinisikan sebagai sekumpulan teknologi, dimana memungkinkan komputer memahami arti dari sebuah informasi berdasarkan metadata, yaitu informasi mengenai isi informasi seperti judul, pengarang, modifikasi tanggal pada halaman web, dan hak cipta pada halaman web. Dengan menggunakan semantik web, pencarian tugas akhir ini mampu memberikan hasil berdasarkan persamaan makna kata pada keyword yang diinputkan oleh user.
+Kata Kunci : Mesin pencari, Semantic web, Tugas akhir.
+ABSTRACT
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://pta.trunojoyo.ac.id/welcome/detail/070411100029
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Penulis : BAHRUL ULUM
+RANCANG BANGUN APLIKASI INTRUSION PREVENTION SYSTEM PADA JARINGAN BERBASIS PROTOKOL TCP/IP MENGGUNAKAN SNORT DAN IPTABLES
+Dalam setiap perusahaan tentunya memiliki data penting berkaitan dengan kegiatan bisnis mereka yang perlu dijaga dan diamankan dari orang yang tidak berhak mengaksesnya. Seringkali  muncul aksi ilegal yang mencoba merusak server bahkan sampai mencuri data perusahaan bisa mengakibatkan kesalahan fatal terhadap kelancaran kegiatan bisnis perusahaan disebabkan data yang tidak valid lagi. Menyikapi masalah tersebut, maka diperlukannya sistem monitoring keamanan yang mampu mengamankan server dari tindakan penyusupan. Intrusion Prevention System (IPS) merupakan solusi yang mampu memberikan keamanan pada jaringan server dari tindakan penyusupan. IPS ini mengembangkan Snort sebagai fungsi pendeteksi yang dikombinasikan dengan IPTables Firewall sebagai pencegah adanya penyusupan. IPS ini juga dilengkapi dengan user interface BASE (Basic Analysis and Security Engine)  dan manajemen rule sehingga memudahkan admin untuk memonitor sistem keamanan dari tindakan penyusupan ke jaringan server. Snort akan membuat alert ketika terdeteksi adanya serangan yang disimpan dalam log Snort dan memerintahkan IPTables untuk melakukan drop terhadap alamat penyerang. Kemudian detail serangan bisa dilihat pada tampilan user interface BASE. Dari hasil pengujian, didapatkan bahwa Snort dan IPTables telah bekerja dengan baik menjadi IPS yang mampu memberikan respon secara cepat ketika terdeteksi adanya serangan. Waktu tanggap rata-rata kurang dari 5 detik, dari awal serangan sampai terdeteksinya alert.
+https://pta.trunojoyo.ac.id/welcome/detail/060411100824
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
 <span class="nn">&lt;ipython-input-6-bbc0cdf20c2a&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">lengkap</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isi</span><span class="p">)</span>
@@ -804,62 +831,46 @@ https://pta.trunojoyo.ac.id/welcome/detail/070411100152
 <span class="g g-Whitespace">    </span><span class="mi">705</span><span class="s2">                 method,</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="s2">                     # Python 3 (including for exceptions like SystemExit).</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="s2">                     # Otherwise it looks like a bug in the code.</span>
-<span class="ne">--&gt; </span><span class="mi">449</span><span class="s2">                     six.raise_from(e, None)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span><span class="s2">         except (SocketTimeout, BaseSSLError, SocketError) as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="s2">             self._raise_timeout(err=e, url=url, timeout_value=read_timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span><span class="s2">         # Trigger any extra validation we need to do.</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span><span class="s2">         try:</span>
+<span class="ne">--&gt; </span><span class="mi">386</span><span class="s2">             self._validate_conn(conn)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span><span class="s2">         except (SocketTimeout, BaseSSLError) as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span><span class="s2">             # Py2 raises this as a BaseSSLError, Py3 raises it as socket timeout.</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/packages/six.py</span> in <span class="ni">raise_from</span><span class="nt">(value, from_value)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1040</span><span class="s2">         # Force connect early to allow us to validate the connection.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1041</span><span class="s2">         if not getattr(conn, &quot;sock&quot;, None):  # AppEngine might not have  `.sock`</span>
+<span class="ne">-&gt; </span><span class="mi">1042</span><span class="s2">             conn.connect()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1043</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1044</span><span class="s2">         if not conn.is_verified:</span>
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span><span class="s2">                 # Python 3</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span><span class="s2">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">444</span><span class="s2">                     httplib_response = conn.getresponse()</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span><span class="s2">                 except BaseException as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span><span class="s2">                     # Remove the TypeError from the exception chain in</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span><span class="s2">     def connect(self):</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span><span class="s2">         # Add certificate verification</span>
+<span class="ne">--&gt; </span><span class="mi">363</span><span class="s2">         self.sock = conn = self._new_conn()</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span><span class="s2">         hostname = self.host</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span><span class="s2">         tls_in_tls = False</span>
 
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span><span class="s2">             try:</span>
-<span class="ne">-&gt; </span><span class="mi">1375</span><span class="s2">                 response.begin()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1376</span><span class="s2">             except ConnectionError:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1377</span><span class="s2">                 self.close()</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">_new_conn</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span><span class="s2">         try:</span>
+<span class="ne">--&gt; </span><span class="mi">174</span><span class="s2">             conn = connection.create_connection(</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span><span class="s2">                 (self._dns_host, self.port), self.timeout, **extra_kw</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span><span class="s2">             )</span>
 
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span><span class="s2">         # read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span><span class="s2">         while True:</span>
-<span class="ne">--&gt; </span><span class="mi">318</span><span class="s2">             version, status, reason = self._read_status()</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span><span class="s2">             if status != CONTINUE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="s2">                 break</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="s2">         )</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="s2"> </span>
+<span class="ne">---&gt; </span><span class="mi">72</span><span class="s2">     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">         af, socktype, proto, canonname, sa = res</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2">         sock = None</span>
 
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">_read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span><span class="s2">     def _read_status(self):</span>
-<span class="ne">--&gt; </span><span class="mi">279</span><span class="s2">         line = str(self.fp.readline(_MAXLINE + 1), &quot;iso-8859-1&quot;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span><span class="s2">         if len(line) &gt; _MAXLINE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span><span class="s2">             raise LineTooLong(&quot;status line&quot;)</span>
-
-<span class="nn">/usr/lib/python3.10/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">         while True:</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">705</span><span class="s2">                 return self._sock.recv_into(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span><span class="s2">             except timeout:</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span><span class="s2">                 self._timeout_occurred = True</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1272</span><span class="s2">                   &quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot; %</span>
-<span class="g g-Whitespace">   </span><span class="mi">1273</span><span class="s2">                   self.__class__)</span>
-<span class="ne">-&gt; </span><span class="mi">1274</span><span class="s2">             return self.read(nbytes, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1275</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1276</span><span class="s2">             return super().recv_into(buffer, nbytes, flags)</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1128</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span><span class="s2">             if buffer is not None:</span>
-<span class="ne">-&gt; </span><span class="mi">1130</span><span class="s2">                 return self._sslobj.read(len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1131</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span><span class="s2">                 return self._sslobj.read(len)</span>
+<span class="nn">/usr/lib/python3.10/socket.py</span> in <span class="ni">getaddrinfo</span><span class="nt">(host, port, family, type, proto, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span><span class="s2">     # and socket type values to enum constants.</span>
+<span class="g g-Whitespace">    </span><span class="mi">954</span><span class="s2">     addrlist = []</span>
+<span class="ne">--&gt; </span><span class="mi">955</span><span class="s2">     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):</span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span><span class="s2">         af, socktype, proto, canonname, sa = res</span>
+<span class="g g-Whitespace">    </span><span class="mi">957</span><span class="s2">         addrlist.append((_intenum_converter(af, AddressFamily),</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
