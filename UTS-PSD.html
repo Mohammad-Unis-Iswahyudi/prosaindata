@@ -404,58 +404,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-2-d5df0069828e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/prosaindata/dataset-baru.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Mohammad-Unis-Iswahyudi/prosaindata/main/dataset-baru.csv&#39;</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8d4f3497-14bc-4f1c-b03e-94eded5a3040">
+  <div id="df-e3ff9f39-c23b-4bde-9286-73a4f6341461">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -551,7 +507,7 @@ document.write(`
 </table>
 <p>805 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8d4f3497-14bc-4f1c-b03e-94eded5a3040')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e3ff9f39-c23b-4bde-9286-73a4f6341461')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -602,12 +558,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-8d4f3497-14bc-4f1c-b03e-94eded5a3040 button.colab-df-convert');
+          document.querySelector('#df-e3ff9f39-c23b-4bde-9286-73a4f6341461 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8d4f3497-14bc-4f1c-b03e-94eded5a3040');
+          const element = document.querySelector('#df-e3ff9f39-c23b-4bde-9286-73a4f6341461');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -640,7 +596,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-49960843-1f2c-4401-b365-3e4b15761789">
+  <div id="df-ad74453f-6224-4803-ac1f-e83c597a0187">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -712,7 +668,7 @@ document.write(`
 </table>
 <p>805 rows × 1 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-49960843-1f2c-4401-b365-3e4b15761789')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ad74453f-6224-4803-ac1f-e83c597a0187')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -763,12 +719,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-49960843-1f2c-4401-b365-3e4b15761789 button.colab-df-convert');
+          document.querySelector('#df-ad74453f-6224-4803-ac1f-e83c597a0187 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-49960843-1f2c-4401-b365-3e4b15761789');
+          const element = document.querySelector('#df-ad74453f-6224-4803-ac1f-e83c597a0187');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -810,7 +766,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-362523cb-0b42-47be-a3bb-74053d26b76d">
+  <div id="df-4a4213a3-9fe7-461f-9799-3bf7daab683a">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -882,7 +838,7 @@ document.write(`
 </table>
 <p>805 rows × 1 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-362523cb-0b42-47be-a3bb-74053d26b76d')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4a4213a3-9fe7-461f-9799-3bf7daab683a')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -933,12 +889,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-362523cb-0b42-47be-a3bb-74053d26b76d button.colab-df-convert');
+          document.querySelector('#df-4a4213a3-9fe7-461f-9799-3bf7daab683a button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-362523cb-0b42-47be-a3bb-74053d26b76d');
+          const element = document.querySelector('#df-4a4213a3-9fe7-461f-9799-3bf7daab683a');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -972,9 +928,9 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data]   Package stopwords is already up-to-date!
 [nltk_data] Downloading package punkt to /root/nltk_data...
-[nltk_data]   Unzipping tokenizers/punkt.zip.
+[nltk_data]   Package punkt is already up-to-date!
 </pre></div>
 </div>
 </div>
@@ -982,7 +938,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat kamus slang words dan kata Indonesia yang benar</span>
-<span class="n">slang_dict</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/prosaindata/combined_slang_words.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">slang_dict</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/Mohammad-Unis-Iswahyudi/prosaindata/main/combined_slang_words.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
 <span class="c1"># Membuat fungsi untuk mengubah slang words menjadi kata Indonesia yang benar</span>
 <span class="k">def</span> <span class="nf">replace_slang_words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -1006,155 +962,51 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-3d93cc0f-5f4b-493e-a9b4-7efca2031f36">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-6-be0127958d2d&gt;</span> in <span class="ni">&lt;cell line: 16&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">slang_words</span><span class="o">=</span><span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">clean</span><span class="p">)):</span>
+<span class="ne">---&gt; </span><span class="mi">17</span>   <span class="n">slang</span> <span class="o">=</span> <span class="n">replace_slang_words</span><span class="p">(</span><span class="n">clean</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>   <span class="n">slang_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slang</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> 
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">&lt;ipython-input-6-be0127958d2d&gt;</span> in <span class="ni">replace_slang_words</span><span class="nt">(text)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">replace_slang_words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">words</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">words_filtered</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words_filtered</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="k">if</span> <span class="n">words_filtered</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">slang_dict</span><span class="p">:</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Slang Word Corection</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>sistem informasi akademik siakad sistem inform...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>berjalannya koneksi jaringan komputer lancar g...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>web server perangkat lunak server berfungsi me...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>penjadwalan kuliah perguruan kompleks permasal...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>seiring perkembangan teknologi didunia muncul ...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>800</th>
-      <td>investasi saham memiliki resiko kerugian perge...</td>
-    </tr>
-    <tr>
-      <th>801</th>
-      <td>information retrieval ir pengambilan informasi...</td>
-    </tr>
-    <tr>
-      <th>802</th>
-      <td>klasifikasi citra proses pengelompokan piksel ...</td>
-    </tr>
-    <tr>
-      <th>803</th>
-      <td>identifikasi atribut pejalan kaki salah peneli...</td>
-    </tr>
-    <tr>
-      <th>804</th>
-      <td>topik deteksi objek menarik perhatian perkemba...</td>
-    </tr>
-  </tbody>
-</table>
-<p>805 rows × 1 columns</p>
+<span class="nn">&lt;ipython-input-6-be0127958d2d&gt;</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">replace_slang_words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">words</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">words_filtered</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words_filtered</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="k">if</span> <span class="n">words_filtered</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">slang_dict</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/nltk/corpus/reader/wordlist.py</span> in <span class="ni">words</span><span class="nt">(self, fileids, ignore_lines_startswith)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="k">return</span> <span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="n">line</span>
+<span class="nn">---&gt; 21             for line</span> in <span class="ni">line_tokenize(self.raw</span><span class="nt">(fileids))</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">ignore_lines_startswith</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="p">]</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/nltk/tokenize/simple.py</span> in <span class="ni">line_tokenize</span><span class="nt">(text, blanklines)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> 
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">def</span> <span class="nf">line_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">blanklines</span><span class="o">=</span><span class="s2">&quot;discard&quot;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="k">return</span> <span class="n">LineTokenizer</span><span class="p">(</span><span class="n">blanklines</span><span class="p">)</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/nltk/tokenize/simple.py</span> in <span class="ni">tokenize</span><span class="nt">(self, s)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> 
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="n">lines</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="c1"># If requested, strip off blank lines.</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blanklines</span> <span class="o">==</span> <span class="s2">&quot;discard&quot;</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-3d93cc0f-5f4b-493e-a9b4-7efca2031f36')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-      
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-3d93cc0f-5f4b-493e-a9b4-7efca2031f36 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-3d93cc0f-5f4b-493e-a9b4-7efca2031f36');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-  </div></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1166,7 +1018,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Collecting Sastrawi
   Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 KB</span> <span class=" -Color -Color-Red">6.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">3.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hInstalling collected packages: Sastrawi
 Successfully installed Sastrawi-1.0.1
 </pre></div>
@@ -1193,7 +1045,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-34c0d551-9c4c-4c5d-b979-aeb16ebdf221">
+  <div id="df-bdc43af8-9478-4746-8f05-e120b8cb0efc">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1265,7 +1117,7 @@ Successfully installed Sastrawi-1.0.1
 </table>
 <p>805 rows × 1 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-34c0d551-9c4c-4c5d-b979-aeb16ebdf221')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bdc43af8-9478-4746-8f05-e120b8cb0efc')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1316,12 +1168,12 @@ Successfully installed Sastrawi-1.0.1
 
       <script>
         const buttonEl =
-          document.querySelector('#df-34c0d551-9c4c-4c5d-b979-aeb16ebdf221 button.colab-df-convert');
+          document.querySelector('#df-bdc43af8-9478-4746-8f05-e120b8cb0efc button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-34c0d551-9c4c-4c5d-b979-aeb16ebdf221');
+          const element = document.querySelector('#df-bdc43af8-9478-4746-8f05-e120b8cb0efc');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2184,7 +2036,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-93c25f11-9fd1-4d50-a22f-a11a4bbc7bf5">
+  <div id="df-45f78b47-6893-4985-bd57-414c8056bc47">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2256,7 +2108,7 @@ Successfully installed Sastrawi-1.0.1
 </table>
 <p>805 rows × 1 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-93c25f11-9fd1-4d50-a22f-a11a4bbc7bf5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-45f78b47-6893-4985-bd57-414c8056bc47')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -2307,12 +2159,12 @@ Successfully installed Sastrawi-1.0.1
 
       <script>
         const buttonEl =
-          document.querySelector('#df-93c25f11-9fd1-4d50-a22f-a11a4bbc7bf5 button.colab-df-convert');
+          document.querySelector('#df-45f78b47-6893-4985-bd57-414c8056bc47 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-93c25f11-9fd1-4d50-a22f-a11a4bbc7bf5');
+          const element = document.querySelector('#df-45f78b47-6893-4985-bd57-414c8056bc47');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2377,7 +2229,7 @@ Successfully installed Sastrawi-1.0.1
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-f2a51582-ac87-4be7-9acd-4b11f813eaea">
+  <div id="df-f983b04e-097d-4192-99fb-e19b9280c4ef">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2689,7 +2541,7 @@ Successfully installed Sastrawi-1.0.1
 </table>
 <p>805 rows × 5841 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f2a51582-ac87-4be7-9acd-4b11f813eaea')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f983b04e-097d-4192-99fb-e19b9280c4ef')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -2740,12 +2592,12 @@ Successfully installed Sastrawi-1.0.1
 
       <script>
         const buttonEl =
-          document.querySelector('#df-f2a51582-ac87-4be7-9acd-4b11f813eaea button.colab-df-convert');
+          document.querySelector('#df-f983b04e-097d-4192-99fb-e19b9280c4ef button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-f2a51582-ac87-4be7-9acd-4b11f813eaea');
+          const element = document.querySelector('#df-f983b04e-097d-4192-99fb-e19b9280c4ef');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2778,7 +2630,7 @@ Successfully installed Sastrawi-1.0.1
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-a52bfec3-1cc6-430b-a6b7-2755803122d8">
+  <div id="df-69406b91-ebda-454d-891f-ce0fb657a951">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -3090,7 +2942,7 @@ Successfully installed Sastrawi-1.0.1
 </table>
 <p>805 rows × 5841 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a52bfec3-1cc6-430b-a6b7-2755803122d8')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-69406b91-ebda-454d-891f-ce0fb657a951')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -3141,12 +2993,12 @@ Successfully installed Sastrawi-1.0.1
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a52bfec3-1cc6-430b-a6b7-2755803122d8 button.colab-df-convert');
+          document.querySelector('#df-69406b91-ebda-454d-891f-ce0fb657a951 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a52bfec3-1cc6-430b-a6b7-2755803122d8');
+          const element = document.querySelector('#df-69406b91-ebda-454d-891f-ce0fb657a951');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -3180,7 +3032,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4f073969-6a38-4d81-b70d-ef2f6a472102">
+  <div id="df-1ab61c5e-2568-42bf-bff4-e75f441ee95c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -3215,68 +3067,68 @@ Successfully installed Sastrawi-1.0.1
   <tbody>
     <tr>
       <th>0</th>
-      <td>-0.022677</td>
-      <td>-0.112960</td>
-      <td>-0.029917</td>
-      <td>-0.054330</td>
-      <td>-0.052919</td>
-      <td>0.036881</td>
-      <td>-0.076070</td>
-      <td>0.055444</td>
-      <td>0.107549</td>
-      <td>0.176881</td>
+      <td>-0.022675</td>
+      <td>-0.112965</td>
+      <td>-0.029925</td>
+      <td>-0.054529</td>
+      <td>-0.052256</td>
+      <td>0.038346</td>
+      <td>-0.080004</td>
+      <td>0.060096</td>
+      <td>0.099711</td>
+      <td>0.175040</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.025076</td>
-      <td>-0.031148</td>
-      <td>-0.011741</td>
-      <td>-0.094388</td>
-      <td>-0.005612</td>
-      <td>0.045840</td>
-      <td>-0.053409</td>
-      <td>0.054994</td>
-      <td>-0.013664</td>
-      <td>0.001636</td>
+      <td>-0.025072</td>
+      <td>-0.031141</td>
+      <td>-0.011801</td>
+      <td>-0.094386</td>
+      <td>-0.004650</td>
+      <td>0.046244</td>
+      <td>-0.050799</td>
+      <td>0.053332</td>
+      <td>-0.023306</td>
+      <td>0.006254</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-0.032508</td>
-      <td>-0.023772</td>
-      <td>-0.044896</td>
-      <td>-0.111400</td>
-      <td>-0.062022</td>
-      <td>0.063205</td>
-      <td>-0.060081</td>
-      <td>-0.097037</td>
-      <td>0.233492</td>
-      <td>-0.035487</td>
+      <td>-0.032509</td>
+      <td>-0.023762</td>
+      <td>-0.044934</td>
+      <td>-0.111049</td>
+      <td>-0.061586</td>
+      <td>0.062459</td>
+      <td>-0.061285</td>
+      <td>-0.090780</td>
+      <td>0.238714</td>
+      <td>-0.028947</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-0.028188</td>
+      <td>-0.028194</td>
       <td>-0.032274</td>
-      <td>-0.033612</td>
-      <td>-0.030833</td>
-      <td>0.010600</td>
-      <td>0.021572</td>
-      <td>-0.039038</td>
-      <td>-0.031522</td>
-      <td>-0.017994</td>
-      <td>-0.050437</td>
+      <td>-0.033765</td>
+      <td>-0.030228</td>
+      <td>0.008649</td>
+      <td>0.020687</td>
+      <td>-0.042036</td>
+      <td>-0.058991</td>
+      <td>0.001243</td>
+      <td>-0.031721</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-0.060064</td>
-      <td>0.060267</td>
-      <td>0.030227</td>
-      <td>-0.067623</td>
-      <td>-0.003498</td>
-      <td>0.130826</td>
-      <td>-0.096444</td>
-      <td>0.085823</td>
-      <td>-0.056637</td>
-      <td>-0.142799</td>
+      <td>-0.060060</td>
+      <td>0.060272</td>
+      <td>0.030220</td>
+      <td>-0.067883</td>
+      <td>-0.005120</td>
+      <td>0.126202</td>
+      <td>-0.097050</td>
+      <td>0.088763</td>
+      <td>-0.063242</td>
+      <td>-0.128706</td>
     </tr>
     <tr>
       <th>...</th>
@@ -3293,74 +3145,74 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>800</th>
-      <td>0.005193</td>
-      <td>-0.030430</td>
-      <td>0.006176</td>
-      <td>-0.026140</td>
-      <td>-0.032181</td>
-      <td>0.024438</td>
-      <td>0.064567</td>
-      <td>-0.031285</td>
-      <td>-0.083688</td>
-      <td>-0.008641</td>
+      <td>0.005196</td>
+      <td>-0.030425</td>
+      <td>0.006166</td>
+      <td>-0.026168</td>
+      <td>-0.031932</td>
+      <td>0.023620</td>
+      <td>0.064714</td>
+      <td>-0.032764</td>
+      <td>-0.087548</td>
+      <td>-0.012492</td>
     </tr>
     <tr>
       <th>801</th>
       <td>0.006834</td>
-      <td>-0.026384</td>
-      <td>-0.031969</td>
-      <td>-0.054569</td>
-      <td>-0.062037</td>
-      <td>0.030132</td>
-      <td>-0.028824</td>
-      <td>-0.198901</td>
-      <td>0.207526</td>
-      <td>-0.112782</td>
+      <td>-0.026387</td>
+      <td>-0.031908</td>
+      <td>-0.054623</td>
+      <td>-0.062014</td>
+      <td>0.029490</td>
+      <td>-0.030985</td>
+      <td>-0.190514</td>
+      <td>0.215427</td>
+      <td>-0.119140</td>
     </tr>
     <tr>
       <th>802</th>
-      <td>0.242966</td>
-      <td>0.042486</td>
-      <td>-0.038849</td>
-      <td>0.068509</td>
-      <td>-0.094717</td>
-      <td>0.027967</td>
-      <td>0.072081</td>
-      <td>-0.067203</td>
-      <td>-0.070541</td>
-      <td>0.034269</td>
+      <td>0.242971</td>
+      <td>0.042478</td>
+      <td>-0.038806</td>
+      <td>0.068183</td>
+      <td>-0.094617</td>
+      <td>0.025899</td>
+      <td>0.073910</td>
+      <td>-0.068019</td>
+      <td>-0.080104</td>
+      <td>0.022593</td>
     </tr>
     <tr>
       <th>803</th>
-      <td>0.104287</td>
-      <td>0.008660</td>
-      <td>-0.010914</td>
-      <td>-0.003168</td>
-      <td>-0.041146</td>
-      <td>0.038111</td>
-      <td>0.106303</td>
-      <td>-0.020738</td>
-      <td>-0.067667</td>
-      <td>-0.040398</td>
+      <td>0.104296</td>
+      <td>0.008651</td>
+      <td>-0.010845</td>
+      <td>-0.003632</td>
+      <td>-0.040364</td>
+      <td>0.037287</td>
+      <td>0.108144</td>
+      <td>-0.016070</td>
+      <td>-0.083367</td>
+      <td>-0.048894</td>
     </tr>
     <tr>
       <th>804</th>
-      <td>0.077455</td>
-      <td>0.013390</td>
-      <td>0.030967</td>
-      <td>-0.002873</td>
-      <td>-0.037779</td>
-      <td>0.064371</td>
-      <td>-0.008492</td>
-      <td>-0.012578</td>
-      <td>-0.012700</td>
-      <td>-0.014244</td>
+      <td>0.077457</td>
+      <td>0.013400</td>
+      <td>0.030954</td>
+      <td>-0.003008</td>
+      <td>-0.038596</td>
+      <td>0.061672</td>
+      <td>-0.006021</td>
+      <td>-0.011064</td>
+      <td>-0.013811</td>
+      <td>-0.019323</td>
     </tr>
   </tbody>
 </table>
 <p>805 rows × 10 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-4f073969-6a38-4d81-b70d-ef2f6a472102')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-1ab61c5e-2568-42bf-bff4-e75f441ee95c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -3411,12 +3263,12 @@ Successfully installed Sastrawi-1.0.1
 
       <script>
         const buttonEl =
-          document.querySelector('#df-4f073969-6a38-4d81-b70d-ef2f6a472102 button.colab-df-convert');
+          document.querySelector('#df-1ab61c5e-2568-42bf-bff4-e75f441ee95c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-4f073969-6a38-4d81-b70d-ef2f6a472102');
+          const element = document.querySelector('#df-1ab61c5e-2568-42bf-bff4-e75f441ee95c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -3461,7 +3313,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-8 {color: black;background-color: white;}#sk-container-id-8 pre{padding: 0;}#sk-container-id-8 div.sk-toggleable {background-color: white;}#sk-container-id-8 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-8 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-8 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-8 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-8 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-8 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-8 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-8 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-8 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-8 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-8 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-8 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-8 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-8 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-8 div.sk-item {position: relative;z-index: 1;}#sk-container-id-8 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-8 div.sk-item::before, #sk-container-id-8 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-8 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-8 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-8 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-8 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-8 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-8 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-8 div.sk-label-container {text-align: center;}#sk-container-id-8 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-8 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-8" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=9)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" checked><label for="sk-estimator-id-8" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(n_neighbors=9)</pre></div></div></div></div></div></div></div>
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=7)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier(n_neighbors=7)</pre></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3474,32 +3326,33 @@ Successfully installed Sastrawi-1.0.1
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
        &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
        &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;,
-       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;, &#39;rpl&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
-       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;,
+       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
        &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
-       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
-       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
+       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
        &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
        &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
+       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
+       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
        &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
        &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
        &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;,
-       &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
-       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;], dtype=object)
+       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;rpl&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;rpl&#39;, &#39;rpl&#39;, &#39;rpl&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;, &#39;komputasi&#39;,
+       &#39;komputasi&#39;, &#39;komputasi&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -3525,12 +3378,12 @@ Successfully installed Sastrawi-1.0.1
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-   komputasi       0.90      0.92      0.91       113
-         rpl       0.80      0.75      0.77        48
+   komputasi       0.88      0.91      0.90       113
+         rpl       0.77      0.71      0.74        48
 
-    accuracy                           0.87       161
-   macro avg       0.85      0.84      0.84       161
-weighted avg       0.87      0.87      0.87       161
+    accuracy                           0.85       161
+   macro avg       0.83      0.81      0.82       161
+weighted avg       0.85      0.85      0.85       161
 </pre></div>
 </div>
 </div>
@@ -3609,12 +3462,12 @@ weighted avg       0.87      0.87      0.87       161
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-   komputasi       0.95      0.71      0.81       113
-         rpl       0.57      0.92      0.70        48
+   komputasi       0.94      0.66      0.78       113
+         rpl       0.53      0.90      0.67        48
 
-    accuracy                           0.77       161
-   macro avg       0.76      0.81      0.76       161
-weighted avg       0.84      0.77      0.78       161
+    accuracy                           0.73       161
+   macro avg       0.73      0.78      0.72       161
+weighted avg       0.82      0.73      0.74       161
 </pre></div>
 </div>
 </div>

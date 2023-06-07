@@ -1,4 +1,15 @@
 Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 778, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_core/utils/__init__.py", line 182, in ensure_async
+    result = await obj
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_client/asynchronous/channels.py", line 48, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
   File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1305, in execute
@@ -9,41 +20,18 @@ Traceback (most recent call last):
     return future.result()
   File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1058, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 914, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-import pandas as pd
-import numpy as np
-import nltk
-from nltk.corpus import stopwords
-import re
-import swifter
-df = pd.read_csv("dataset-baru.csv")
-text = df["Abstrak"]
-text
-------------------
-
-
-[0;31m[0m
-[0;31mModuleNotFoundError[0mTraceback (most recent call last)
-[0;32m<ipython-input-1-de13bc3ddee4>[0m in [0;36m<cell line: 6>[0;34m()[0m
-[1;32m      4[0m [0;32mfrom[0m [0mnltk[0m[0;34m.[0m[0mcorpus[0m [0;32mimport[0m [0mstopwords[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;32mimport[0m [0mre[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 6[0;31m [0;32mimport[0m [0mswifter[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      7[0m [0mdf[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m"dataset-baru.csv"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      8[0m [0mtext[0m [0;34m=[0m [0mdf[0m[0;34m[[0m[0;34m"Abstrak"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mModuleNotFoundError[0m: No module named 'swifter'
-
-[0;31m---------------------------------------------------------------------------[0;32m
-NOTE: If your import is failing due to a missing package, you can
-manually install dependencies using either !pip or !apt.
-
-To view examples of installing some common dependencies, click the
-"Open Examples" button below.
-[0;31m---------------------------------------------------------------------------[0m
-
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1001, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 802, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 852, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['from Sastrawi.Stemmer.StemmerFactory import StemmerFactory', '', 'factory = StemmerFactory()', 'stemmer = factory.create_stemmer()', 'def stemmingNormalize(comment):']
+...
+['      kalimat += i', '      kalimat += " "', '    return kalimat', 'text = text.swifter.apply(stemmingNormalize)', 'text']
+-------------------
 
